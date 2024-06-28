@@ -10,8 +10,9 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider.value(value:NetworkProvider()..checkConnectivity()),
-        ChangeNotifierProvider.value(value:HomeProvider()),
+        ChangeNotifierProvider.value(
+            value: NetworkProvider()..checkConnectivity()),
+        ChangeNotifierProvider.value(value: HomeProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

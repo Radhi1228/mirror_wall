@@ -11,7 +11,6 @@ class HomeProvider with ChangeNotifier
   Connectivity connectivity =Connectivity();
   List<String> bookMark=[];
 
-
   void  onProgress()
   {
       Connectivity().onConnectivityChanged.listen(
@@ -26,10 +25,8 @@ class HomeProvider with ChangeNotifier
           notifyListeners();
         },
       );
-
   }
-
-  void checkLinearPrograss(double p1)
+  void checkLinearProgress(double p1)
   {
     checkProgress=p1;
     notifyListeners();

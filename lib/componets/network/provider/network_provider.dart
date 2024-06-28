@@ -9,10 +9,8 @@ class NetworkProvider with ChangeNotifier
           (event) {
         if (event.contains(ConnectivityResult.none)) {
           isInterNet = false;
-          //no internet
         } else {
           isInterNet = true;
-          // internet on
         }
         notifyListeners();
       },

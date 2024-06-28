@@ -98,21 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ? Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SearchBar(
-                  onTap: () {},
-                  onChanged: (value) {},
-                  leading: const Row(
-                    children: [
-                      Icon(Icons.search),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      // TextFormField(
-                      //   decoration: const InputDecoration(label: Text("Search")),
-                      // )
-                    ],
-                  ),
-                ),
                 Expanded(
                     child: InAppWebView(
                         initialUrlRequest:
@@ -123,15 +108,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         onLoadStop: (controller, url) {
                           webView = controller;
                         },
-                        pullToRefreshController: PullToRefreshController(
-                          onRefresh: () {},
-                        ),
                         onProgressChanged: (controller, progress) {
-                          providerR!.checkLinearPrograss(progress / 100);
+                          providerR!.checkLinearProgress(progress / 100);
                           webView = controller;
-                          if (progress == 100) {
-                            refreshController?.endRefreshing();
-                          }
                         })),
               ],
             )
