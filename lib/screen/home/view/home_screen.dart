@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
     providerR = context.read<HomeProvider>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My Browser"),
+        title: const Text("Goggle"),
         centerTitle: true,
         actions: [
           PopupMenuButton(
@@ -145,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       urlRequest:
                           URLRequest(url: WebUri("https://www.google.com")));
                 },
-                icon: const Icon(Icons.home),
+                icon: const Icon(Icons.home_outlined),
                 color: Colors.black,
               ),
               label: "Home"),
@@ -154,7 +154,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () async{
                   String url = (await webView!.getUrl()).toString();
                   providerR!.setBookmarkData(url);
-
                 },
                 icon: const Icon(Icons.bookmark_add_outlined),
                 color: Colors.black,
@@ -168,16 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: const Icon(Icons.arrow_back),
                 color: Colors.black,
               ),
-              label: "Bake"),
-          BottomNavigationBarItem(
-              icon: IconButton(
-                onPressed: () {
-                  webView!.goForward();
-                },
-                icon: const Icon(Icons.arrow_forward),
-                color: Colors.black,
-              ),
-              label: "Forward"),
+              label: "back"),
           BottomNavigationBarItem(
               icon: IconButton(
                 onPressed: () {
@@ -187,6 +177,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.black,
               ),
               label: "refresh"),
+          BottomNavigationBarItem(
+              icon: IconButton(
+                onPressed: () {
+                  webView!.goForward();
+                },
+                icon: const Icon(Icons.arrow_forward),
+                color: Colors.black,
+              ),
+              label: "Forward"),
+
         ],
       ),
     );
